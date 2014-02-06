@@ -19,3 +19,4 @@
 *.swp
 eclipse-projects/*
 derby.log
+amqp-trace.txt
