@@ -739,9 +739,18 @@ public class JMSClientTest extends AmqpTestSupport {
         return createConnection(clientId, false);
     }
 
+    /**
+     * Override to change test to point to NIO, NIO+SSL or SSL defaults to the TCP port.
+     *
+     * @return the port to point the AMQP client to for connections.
+     */
+    protected int getBrokerPort() {
+        return port;
+    }
+
     private Connection createConnection(String clientId, boolean syncPublish) throws JMSException {
 
-        final ConnectionFactoryImpl factory = new ConnectionFactoryImpl("localhost", port, "admin", "password");
+        final ConnectionFactoryImpl factory = new ConnectionFactoryImpl("localhost", getBrokerPort(), "admin", "password");
 
         factory.setSyncPublish(syncPublish);
         factory.setTopicPrefix("topic://");

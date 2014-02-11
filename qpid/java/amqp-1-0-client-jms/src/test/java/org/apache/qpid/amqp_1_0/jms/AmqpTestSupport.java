@@ -98,9 +98,9 @@ public class AmqpTestSupport {
 //        connector = brokerService.addConnector("amqp+ssl://0.0.0.0:" + sslPort);
 //        port = connector.getConnectUri().getPort();
 //        LOG.debug("Using amqp+ssl port " + sslPort);
-//        connector = brokerService.addConnector("amqp+nio://0.0.0.0:" + nioPort);
-//        nioPort = connector.getConnectUri().getPort();
-//        LOG.debug("Using amqp+nio port " + nioPort);
+        connector = brokerService.addConnector("amqp+nio://0.0.0.0:" + nioPort);
+        nioPort = connector.getConnectUri().getPort();
+        LOG.debug("Using amqp+nio port " + nioPort);
 //        connector = brokerService.addConnector("amqp+nio+ssl://0.0.0.0:" + nioPlusSslPort);
 //        nioPlusSslPort = connector.getConnectUri().getPort();
 //        LOG.debug("Using amqp+nio+ssl port " + nioPlusSslPort);
